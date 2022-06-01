@@ -1,5 +1,5 @@
 [package]
-name = "bcrypt-utils"
+name = "hash_utils"
 version = "1.0.0"
 edition = "2018"
 
@@ -7,6 +7,9 @@ edition = "2018"
 
 [dependencies]
 bcrypt = "0.10"
+clap = { version = "3.1.18", features = ["derive"] }
+md-5 = "0.10.1"
+base64 = "0.20.0-alpha.1"
 
 [profile.release]
 opt-level = 3

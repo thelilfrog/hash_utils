@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bcrypt-utils.iml" filepath="$PROJECT_DIR$/bcrypt-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hash_utils.iml" filepath="$PROJECT_DIR$/hash_utils.iml" />
     </modules>
   </component>
 </project>
