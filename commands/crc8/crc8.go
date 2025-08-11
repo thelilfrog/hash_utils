@@ -57,6 +57,7 @@ func (p *CRC8Cmd) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}) 
 			for _, table := range tables {
 				fmt.Printf("%s ", table.Name)
 			}
+			fmt.Println()
 			fmt.Fprintln(os.Stderr, "error:", err)
 
 			return subcommands.ExitFailure
