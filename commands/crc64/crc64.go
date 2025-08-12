@@ -42,7 +42,7 @@ func (p *CRC64Cmd) Execute(ctx context.Context, f *flag.FlagSet, args ...interfa
 	if len(p.table) > 0 {
 		param, err = parse(p.table)
 		if err != nil {
-			fmt.Printf("Available tables: IEEE Castagnoli Koopman")
+			fmt.Println("Available tables: ISO ECMA")
 			return subcommands.ExitFailure
 		}
 	}
@@ -71,9 +71,9 @@ func (p *CRC64Cmd) Execute(ctx context.Context, f *flag.FlagSet, args ...interfa
 
 func parse(tableName string) (uint64, error) {
 	switch tableName {
-	case "Castagnoli":
+	case "ISO":
 		return crc64.ISO, nil
-	case "Koopman":
+	case "ECMA":
 		return crc64.ECMA, nil
 	}
 	return 0, fmt.Errorf("invalid table name: %s", tableName)

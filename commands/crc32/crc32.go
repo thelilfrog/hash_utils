@@ -43,7 +43,7 @@ func (p *CRC32Cmd) Execute(ctx context.Context, f *flag.FlagSet, args ...interfa
 	if len(p.table) > 0 {
 		param, err = parse(p.table)
 		if err != nil {
-			fmt.Printf("Available tables: IEEE Castagnoli Koopman")
+			fmt.Println("Available tables: IEEE Castagnoli Koopman")
 			return subcommands.ExitFailure
 		}
 	}
