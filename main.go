@@ -3,8 +3,12 @@ package main
 import (
 	"context"
 	"flag"
+	"hash_utils/commands/argon2"
 	"hash_utils/commands/base64"
 	"hash_utils/commands/bcrypt"
+	"hash_utils/commands/crc16"
+	"hash_utils/commands/crc32"
+	"hash_utils/commands/crc64"
 	"hash_utils/commands/crc8"
 	"hash_utils/commands/md5"
 	"hash_utils/commands/sha1"
@@ -28,8 +32,12 @@ func main() {
 	subcommands.Register(&sha512.SHA512Cmd{}, "unkeyed cryptographic hash functions")
 
 	subcommands.Register(&crc8.CRC8Cmd{}, "cyclic redundancy checks")
+	subcommands.Register(&crc16.CRC16Cmd{}, "cyclic redundancy checks")
+	subcommands.Register(&crc32.CRC32Cmd{}, "cyclic redundancy checks")
+	subcommands.Register(&crc64.CRC64Cmd{}, "cyclic redundancy checks")
 
 	subcommands.Register(&bcrypt.BCryptCmd{}, "password hashing functions")
+	subcommands.Register(&argon2.Argon2Cmd{}, "password hashing functions")
 
 	subcommands.Register(&base64.Base64Cmd{}, "other")
 

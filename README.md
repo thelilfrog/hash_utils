@@ -5,8 +5,14 @@ This is a simple tool box with basic functionality.
 ## Supported tools
  - BCrypt
  - MD5
- - SHA (1, 256, 512)
+ - SHA1
+ - SHA2
+ - SHA3
  - CRC8
- - Base64 (not a hash algo but idc)
+ - CRC16
+ - CRC32
+ - CRC64
+ - Argon2
+ - Base64 (not a hash but idc)
  
 more later...

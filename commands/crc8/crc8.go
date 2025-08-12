@@ -36,10 +36,13 @@ var (
 func (*CRC8Cmd) Name() string     { return "crc8" }
 func (*CRC8Cmd) Synopsis() string { return "" }
 func (*CRC8Cmd) Usage() string {
-	return `Usage: hash_utils crc8
-
-Options:
-`
+	res := "Usage: hash_utils crc8\n\n"
+	res += "Algorithm available:\n"
+	for _, table := range tables {
+		res += "  - " + table.Name + "\n"
+	}
+	res += "\nOptions:\n"
+	return res
 }
 
 func (p *CRC8Cmd) SetFlags(f *flag.FlagSet) {
