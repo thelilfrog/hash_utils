@@ -2,6 +2,17 @@ pipeline {
     agent any
 
     stages {
+        stage('Audit') {
+            steps {
+                sh '''
+                go install github.com/securego/gosec/v2/cmd/gosec@v2.22.8
+                go install honnef.co/go/tools/cmd/staticcheck@v0.6.1
+
+                /var/lib/jenkins/go/bin/staticcheck ./...
+                /var/lib/jenkins/go/bin/gosec -exclude="G401,G501,G103" ./...
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 sh './build.sh'
